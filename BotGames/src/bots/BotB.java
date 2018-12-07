@@ -6,9 +6,7 @@ public class BotB extends Bot {
 		super(x, y, "B");
 	}
 
-	boolean a = true;
-	
-	public byte getMove() {
+	public byte getMove(byte[][] visual) {
 		return idle;
 	}
 	

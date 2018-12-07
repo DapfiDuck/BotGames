@@ -11,6 +11,7 @@ public abstract class Bot {
 	 */
 
 	private byte hp = 100, x, y, rotation, sx, sy;
+	private byte[][] visual;
 	private boolean shielded, lasering;
 	private String name;
 	Color c;
@@ -110,6 +111,58 @@ public abstract class Bot {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public byte[][] getVisual() {
+		return visual;
+	}
+
+	public void setVisual(byte[][] visual) {
+		this.visual = visual;
+	}
+	
+	public void calcVisual(Bot b) {
+		
+		byte[][] visual = new byte[3][3];
+		
+		int xv = 0, yv = 0;
+		
+		
+		//Player on Visor
+		switch (rotation) {
+		case 1:
+			xv = this.x-1;
+			yv = this.y-3;
+			break;
+		case 2:
+			xv = this.x+1;
+			yv = this.y-1;
+			break;
+		case 3:
+			xv = this.x-1;
+			yv = this.y+1;
+			break;
+		case 4:
+			xv = this.x-3;
+			yv = this.y-1;
+			break;
+		}
+		
+		int px = b.getX()-xv;
+		int py = b.getY()-yv;
+		
+		if(valid(px, py)) {
+			visual[px][py] = 1;
+		}
+		
+		
+		
+		this.visual = visual;
+		
+	}
+	
+	boolean valid(int px, int py) {
+		return (px>=0&&px<3&&py>=0&&py<3);
 	}
 
 }

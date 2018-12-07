@@ -57,7 +57,6 @@ public class Monitor extends JFrame {
 		g.setColor(new Color(100, 0, 0));
 //		g.fillRect(a.getX()*80+9+35, a.getY()*80+35+35, lx, ly);
 		g.fillRect(a.getX() * 80 + 9, a.getY() * 80 + 35, 80, 80);
-		g.drawString(String.valueOf(a.getHp()), a.getX()*80+9, a.getY()*80+35);
 
 //		xp 	= a.getX() * 80 + 44;
 //		yp 	= a.getY() * 80 + 75;
@@ -78,7 +77,6 @@ public class Monitor extends JFrame {
 
 		g.setColor(new Color(0, 0, 100));
 		g.fillRect(b.getX() * 80 + 9, b.getY() * 80 + 35, 80, 80);
-		g.drawString(String.valueOf(b.getHp()), b.getX()*80+9, b.getY()*80+35);
 		
 //		xp 	= b.getX() * 80 + 44;
 //		yp 	= b.getY() * 80 + 75;
@@ -96,6 +94,11 @@ public class Monitor extends JFrame {
 		
 //		g.setColor(Color.white);
 //		g.fillRect(xp-10, yp-10, 20, 20);
+		
+
+		g.setColor(Color.white);
+		g.drawString(String.valueOf(b.getHp()), b.getX()*80+9, b.getY()*80+46);
+		g.drawString(String.valueOf(a.getHp()), a.getX()*80+9, a.getY()*80+46);
 
 	}
 

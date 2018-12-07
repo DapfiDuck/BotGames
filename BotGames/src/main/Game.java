@@ -71,8 +71,8 @@ public class Game {
 
 		// System.out.println("ticking");
 
-		movea = a.getMove();
-		moveb = b.getMove();
+		movea = a.getMove(a.getVisual());
+		moveb = b.getMove(b.getVisual());
 
 		if (movea == 7) {
 			a.setShield(true);

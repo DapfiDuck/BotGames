@@ -6,7 +6,7 @@ public class BotA extends Bot {
 		super(x, y, "A");
 	}
 	
-	public byte getMove() {
+	public byte getMove(byte[][] visual) {
 		return idle;
 	}
 	
